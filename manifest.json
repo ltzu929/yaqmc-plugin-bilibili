@@ -1,0 +1,29 @@
+{
+  "manifestVersion": 2,
+  "id": "top.ltzu.yaqmc.bilibili",
+  "name": "B 站收藏夹",
+  "description": "登录哔哩哔哩，浏览自己的收藏夹和视频分 P。",
+  "version": "0.1.0-alpha.2",
+  "apiVersion": 3,
+  "platforms": ["android"],
+  "license": "GPL-3.0-or-later",
+  "entrypoints": { "component": "component/provider.wasm" },
+  "songBadges": [
+    {"id":"bilibili","providerIds":["top.ltzu.yaqmc.bilibili"],"label":"Bilibili","labels":{"zh-CN":"B 站"},"color":"#087A9D"}
+  ],
+  "provider": {
+    "id": "top.ltzu.yaqmc.bilibili",
+    "name": "B 站收藏夹",
+    "witVersion": "0.1.0",
+    "world": "provider-account",
+    "videoLibrary": {"sourceUrlTemplate": "https://www.bilibili.com/video/{albumId}/?p={trackNumber}"},
+    "capabilities": ["provider.catalog", "provider.account", "provider.playback"]
+  },
+  "permissions": [
+    "provider.catalog", "provider.account", "provider.playback", "plugin.storage", "ui.songBadges",
+    "network:https://api.bilibili.com", "network:https://passport.bilibili.com", "network:https://www.bilibili.com",
+    "network:https://upos-sz-estgcos.bilivideo.com", "network:https://upos-sz-estghw.bilivideo.com",
+    "network:https://upos-sz-mirrorcos.bilivideo.com", "network:https://upos-sz-mirrorcoso1.bilivideo.com",
+    "network:https://upos-sz-mirrorhw.bilivideo.com", "network:https://upos-sz-mirrorhwb.bilivideo.com"
+  ]
+}
